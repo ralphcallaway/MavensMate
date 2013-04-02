@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mavensmate by joeferraro</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Mavensmate</h1>
+        <p>MavensMate is a tool that powers open source Force.com IDEs in various text editors across various platforms</p>
+
+        <p class="view"><a href="https://github.com/joeferraro/MavensMate">View the Project on GitHub <small>joeferraro/MavensMate</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/joeferraro/MavensMate/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/joeferraro/MavensMate/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/joeferraro/MavensMate">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>MavensMate</h1>
+
+<p>MavensMate is a tool that powers open source Force.com IDEs in various text editors across various platforms</p>
+
+<h3>Wait...I'm confused. I thought MavensMate was a plugin for Sublime Text?</h3>
+
+<p>OK, it <em>WAS</em>. But now, we've rewritten MavensMate to be a cross-platform, text editor agnostic tool for developing Force.com applications. The <a href="https://github.com/joeferraro/MavensMate-SublimeText">Sublime Text plugin</a> still exists, it just utilizes the newly rewritten APIs in this project.</p>
+
+<h3>What is mm?</h3>
+
+<p><code>mm</code> is the executable that performs the heavy lifting. It can create new projects, compile code, move code between orgs, run apex tests, etc...and it's all JSON-based. Simply feed it JSON to provide context to your request, and it will respond in JSON. Here's an example:</p>
+
+<h5>Request</h5>
+
+<pre><code>$ mm -o compile_project &lt;&lt;&lt; '{ "project_name" : "myproject" }'
+</code></pre>
+
+<h5>Response</h5>
+
+<pre><code>{
+    "success" : true,
+    "body"    : "Your operation completed successfully" 
+}
+</code></pre>
+
+<p>For more information on mm's capabilities, head over to the <a href="https://github.com/joeferraro/MavensMate/tree/master/mm#mm">README</a></p>
+
+<h3>What is mmserver?</h3>
+
+<p><code>mmserver</code> is a local http server that the out-of-box MavensMate UI uses to interact with the <code>mm</code> tool. The OOB MavensMate UI is written in HTML/CSS/JS, so to maintain a solid user experience, it makes Ajax calls to a local web server which in turns makes all the terminal calls to <code>mm</code>. If you're writing a MavensMate plugin, your UI can use <code>mmserver</code> or you can simply call <code>mm</code> directly from your plugin's UI.</p>
+
+<h3>How can I write a plugin?</h3>
+
+<p>Pick your favorite text editor with extension capability and utilize the <code>mm</code> and <code>mmserver</code> tools to build fully-functional Force.com IDEs</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/joeferraro">joeferraro</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
