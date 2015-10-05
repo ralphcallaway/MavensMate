@@ -1,51 +1,47 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Mavensmate by joeferraro</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Mavensmate</h1>
-        <p>MavensMate is a tool that powers open source Force.com IDEs in various text editors across various platforms</p>
+    <section class="page-header">
+      <h1 class="project-name">Mavensmate</h1>
+      <h2 class="project-tagline">MavensMate is a tool that powers open source Force.com IDEs in various text editors across various platforms</h2>
+      <a href="https://github.com/joeferraro/MavensMate" class="btn">View on GitHub</a>
+      <a href="https://github.com/joeferraro/MavensMate/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/joeferraro/MavensMate/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/joeferraro/MavensMate">View the Project on GitHub <small>joeferraro/MavensMate</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/joeferraro/MavensMate/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/joeferraro/MavensMate/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/joeferraro/MavensMate">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>MavensMate</h1>
+    <section class="main-content">
+      <h1>
+<a id="mavensmate" class="anchor" href="#mavensmate" aria-hidden="true"><span class="octicon octicon-link"></span></a>MavensMate</h1>
 
 <p>MavensMate is a tool that powers open source Force.com IDEs in various text editors across various platforms</p>
 
-<h3>Wait...I'm confused. I thought MavensMate was a plugin for Sublime Text?</h3>
+<h3>
+<a id="waitim-confused-i-thought-mavensmate-was-a-plugin-for-sublime-text" class="anchor" href="#waitim-confused-i-thought-mavensmate-was-a-plugin-for-sublime-text" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wait...I'm confused. I thought MavensMate was a plugin for Sublime Text?</h3>
 
 <p>OK, it <em>WAS</em>. But now, we've rewritten MavensMate to be a cross-platform, text editor agnostic tool for developing Force.com applications. The <a href="https://github.com/joeferraro/MavensMate-SublimeText">Sublime Text plugin</a> still exists, it just utilizes the newly rewritten APIs in this project.</p>
 
-<h3>What is mm?</h3>
+<h3>
+<a id="what-is-mm" class="anchor" href="#what-is-mm" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is mm?</h3>
 
 <p><code>mm</code> is the executable that performs the heavy lifting. It can create new projects, compile code, move code between orgs, run apex tests, etc...and it's all JSON-based. Simply feed it JSON to provide context to your request, and it will respond in JSON. Here's an example:</p>
 
-<h5>Request</h5>
+<h5>
+<a id="request" class="anchor" href="#request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request</h5>
 
 <pre><code>$ mm -o compile_project &lt;&lt;&lt; '{ "project_name" : "myproject" }'
 </code></pre>
 
-<h5>Response</h5>
+<h5>
+<a id="response" class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h5>
 
 <pre><code>{
     "success" : true,
@@ -55,20 +51,24 @@
 
 <p>For more information on mm's capabilities, head over to the <a href="https://github.com/joeferraro/MavensMate/tree/master/mm#mm">README</a></p>
 
-<h3>What is mmserver?</h3>
+<h3>
+<a id="what-is-mmserver" class="anchor" href="#what-is-mmserver" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is mmserver?</h3>
 
 <p><code>mmserver</code> is a local http server that the out-of-box MavensMate UI uses to interact with the <code>mm</code> tool. The OOB MavensMate UI is written in HTML/CSS/JS, so to maintain a solid user experience, it makes Ajax calls to a local web server which in turns makes all the terminal calls to <code>mm</code>. If you're writing a MavensMate plugin, your UI can use <code>mmserver</code> or you can simply call <code>mm</code> directly from your plugin's UI.</p>
 
-<h3>How can I write a plugin?</h3>
+<h3>
+<a id="how-can-i-write-a-plugin" class="anchor" href="#how-can-i-write-a-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can I write a plugin?</h3>
 
 <p>Pick your favorite text editor with extension capability and utilize the <code>mm</code> and <code>mmserver</code> tools to build fully-functional Force.com IDEs</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/joeferraro">joeferraro</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/joeferraro/MavensMate">Mavensmate</a> is maintained by <a href="https://github.com/joeferraro">joeferraro</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
