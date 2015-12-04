@@ -112,12 +112,11 @@ To run all unit and functional tests:
 
 `npm test`
 
-To run a specific test you may use the mocha command line interface. Examples:
+To run a specific test you may use the mocha command line interface from the project directory. Examples:
 
-`mocha --recursive --grep clean-project`
+`mocha ./test/ --recursive --grep clean-project`
 
-`mocha --recursive --grep 'index-metadata|project-unit'`
-
+`mocha ./test/ --recursive -R spec --grep 'index-metadata|project-unit'`
 
 To generate a coverage report, which will be located at test/coverage.html:
 
