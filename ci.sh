@@ -15,4 +15,4 @@ do
 done
 
 echo ${files[@]}
-make TESTS2="${files[@]}" test
+make TESTS="${files[@]}" test
