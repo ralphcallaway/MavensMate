@@ -1,12 +1,12 @@
 REPORTER = html-cov
-TESTS = $(shell find test -name '*.js')
+TESTS ?= $(shell find test -name '*.js')
 COVERAGE_FILE = coverage.html
 
 test:
 	@NODE_ENV=test HTTP_MAX_SOCKETS=5000 ./node_modules/.bin/mocha \
 	--recursive \
 	--check-leaks \
-	$(TESTS2)
+	$(TESTS)
 
 coverage:
 	@NODE_ENV=test HTTP_MAX_SOCKETS=5000 ./node_modules/.bin/mocha \
