@@ -163,3 +163,10 @@ MavensMate's documentation is built with [Daux.io](http://daux.io) and publicly 
 [stp]: https://github.com/joeferraro/MavensMate-SublimeText
 [atom]: https://github.com/joeferraro/MavensMate-Atom
 [vscode]: https://github.com/joeferraro/MavensMate-VisualStudioCode
+
+## Development
+To setup a development version of the mavensmate core
+1. Clone this repo down locally
+2. Install node dependencies `npm update`
+3. Run the server `/bin/server --verbose`
+4. Update the `mm_app_server_port` attribute in your editors mavensmate configuration to the one listed when starting the server
